@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestWunderMobilityCheckout</name>
+    </assembly>
+    <members>
+        <member name="T:TestWunderMobilityCheckout.Actions.ProcessEvents.ProcessEventsAct">
+            <summary>
+            Process occupations class
+            </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Actions.ProcessEvents.ProcessEventsAct.#ctor(Communication.EventDataService.IEventDataFactory{TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext})">
+            <summary> Process microservice related events such as subscribe to event </summary>
+            <param name="eventDataFactory"> Event data factory </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Actions.ProcessEvents.ProcessEventsAct.DoEventActionAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Actions.ProcessEvents.ProcessEventsAct.SubscribeToEventsAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Actions.ProcessEvents.IProcessEventsAct">
+            <summary>
+            Process occupations interface
+            </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Actions.ProcessEvents.IProcessEventsAct.SubscribeToEventsAsync">
+            <summary>
+            Subscribe to microservice events
+            </summary>
+            <returns> Async task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Actions.ProcessEvents.IProcessEventsAct.DoEventActionAsync">
+            <summary>
+            Process incoming events
+            </summary>
+            <returns> Async task </returns>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Adds.Constants">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Adds.Constants.Strings">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Adds.Constants.Strings.JwtClaimIdentifiers">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="F:TestWunderMobilityCheckout.Adds.Constants.Strings.JwtClaimIdentifiers.Rol">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="F:TestWunderMobilityCheckout.Adds.Constants.Strings.JwtClaimIdentifiers.Id">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Adds.Constants.Strings.JwtClaims">
+            <summary> Embedded constants </summary>
+        </member>
+        <member name="F:TestWunderMobilityCheckout.Adds.Constants.Strings.JwtClaims.ApiAccess">
+            <summary>Inbedded constants</summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Adds.Constants.ConfigFileEncDictionary">
+            <summary> Encrypt some sections of config file </summary>
+        </member>
+        <member name="F:TestWunderMobilityCheckout.Adds.Constants.ConfigFileEncDictionary.Dic">
+            <summary>The list of sections to encrypt</summary>
+        </member>
+        <member name="F:TestWunderMobilityCheckout.Adds.Constants.ConfigFileEncDictionary.DicConfigProvider">
+            <summary> The list of sections to decrypt for configuration provider ("." => ":" in dic key)</summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList">
+            <summary> List of products </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductCode">
+            <summary> Product code </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.Name">
+            <summary> Product name </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.Price">
+            <summary> Product price </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.PromotionalQuantity">
+            <summary> Minimum quantity to apply promotional price </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.PromotionalPrice">
+            <summary> Price if buy promotional quantity or more </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.#ctor(TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams@)">
+            <summary> Register new product </summary>
+            <param name="productParams"> Product params </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ValidateProperties(TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams@)">
+            <summary> Validate input properties </summary>
+            <param name="productParams"> Product params </param>
+            <returns> Validation status </returns>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams">
+            <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.#ctor(System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Single},System.Nullable{System.Int64},System.Nullable{System.Single},System.Nullable{System.Boolean})">
+            <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+            <param name="id"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Id"/> </param>
+            <param name="productCode"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.ProductCode"/> </param>
+            <param name="name"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Name"/> </param>
+            <param name="price"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Price"/> </param>
+            <param name="promotionalQuantity"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.PromotionalQuantity"/> </param>
+            <param name="promotionalPrice"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.PromotionalPrice"/> </param>
+            <param name="isDeleted"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.IsDeleted"/> </param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Id">
+            <summary> Table unique id </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.ProductCode">
+            <summary> Product code </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Name">
+            <summary> Product name </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Price">
+            <summary> Product price </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.PromotionalQuantity">
+            <summary> Minimum quantity to apply promotional price </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.PromotionalPrice">
+            <summary> Price if buy promotional quantity or more </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.IsDeleted">
+            <summary> Soft delete mark </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductsFactory">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductsFactory.#ctor(TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext)">
+            <summary>
+            Constructor <see cref="T:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductsFactory"/>
+            </summary>
+            <param name="currentDBContext"> DBContext from dependency injection </param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductsFactory.DBContext">
+            <summary> property to get or set (prefarably none but in rare cases) Dbcontext (transactional purposes) </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Products.Services.IProductsFactory">
+            <summary>
+            Products service
+            </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.HostedService">
+            <summary> Hosted background service class </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.HostedService.#ctor(System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{TestWunderMobilityCheckout.HostedService},Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="services"> Service provider </param>
+            <param name="logger"> Logger </param>
+            <param name="appLifetime"> App life time </param>
+            <param name="configuration"> Configuration </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.HostedService.Dispose">
+            <summary> Dispose all available classes </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.HostedService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Hosted service stop point
+            </summary>
+            <param name="stoppingToken"> Stopping token </param>
+            <returns> Task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.HostedService.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Hosted service staring point
+            </summary>
+            <param name="stoppingToken"> Stopping token </param>
+            <returns> Task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.HostedService.processEventsTaskAsync(System.Threading.CancellationToken)">
+            <summary> Task to process events that handled by this microservice </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.ModelsIncludeToAll">
+            <summary> Include to all models (general params) except Auth agregate </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.ModelsIncludeToAll.Id">
+            <summary> Unique id </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.ModelsIncludeToAll.IsDeleted">
+            <summary> Soft delete attribute </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ModelsIncludeToAll.#ctor">
+            <summary> Initializes a new instance of the <see cref="T:TestWunderMobilityCheckout.ModelsIncludeToAll"/> class. Parameterless constructor </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ModelsIncludeToAll.#ctor(System.Boolean)">
+            <summary> Constructor </summary>
+            <param name="isDeleted"> Soft delete mark </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ModelsIncludeToAll.ValidateProperties(System.Nullable{System.Boolean})">
+            <summary> Properties validator </summary>
+            <param name="isDeleted"> Soft delete parameter </param>
+            <returns> Validation status </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ModelsIncludeToAll.SoftDelete">
+            <summary>
+            Delete element softly (mark as deleted)
+            </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ModelsIncludeToAll.SoftUnDelete">
+            <summary>
+            Undelete element softly (unmark as deleted)
+            </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Program">
+            <summary> Start point startup are loaded from here </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Program.Main(System.String[])">
+            <summary>
+            Start point
+            </summary>
+            <param name="args"> Args </param>
+            <returns> Task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Program.CreateHostBuilder(System.String[])">
+            <summary> Create host builder </summary>
+            <param name="args"> args </param>
+            <returns> Hostbuilder </returns>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.ScopedProcessEventsService">
+            <summary> Process events handled by this microservice class </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ScopedProcessEventsService.#ctor(Microsoft.Extensions.Logging.ILogger{TestWunderMobilityCheckout.ScopedProcessEventsService},Communication.EventDataService.IEventDataAction{TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext},TestWunderMobilityCheckout.Actions.ProcessEvents.IProcessEventsAct)">
+            <summary> Constructor can use dependency injection because of the scoped visibility of class </summary>
+            <param name="logger"> Logger </param>
+            <param name="eventDataAction"> Event data action </param>
+            <param name="processOccupationsAct"> Occupation action service </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ScopedProcessEventsService.DoWork(System.Threading.CancellationToken,Communication.SocketLibrary.SocketConnectionHandler,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ScopedProcessEventsService.RaceTaskAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.ScopedProcessEventsService.ReceiveTaskAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.IScopedProcessEventsService">
+            <summary> Process events handled by this microservice interface </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.IScopedProcessEventsService.DoWork(System.Threading.CancellationToken,Communication.SocketLibrary.SocketConnectionHandler,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <summary>
+            Scoped process event service starting point
+            </summary>
+            <param name="stoppingToken"> Cancellation token </param>
+            <param name="currentSocketConnectionHandler"> Socket connection class </param>
+            <param name="workFunctionAsync"> What to run </param>
+            <returns> Task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.IScopedProcessEventsService.RaceTaskAsync(System.Threading.CancellationToken)">
+            <summary>
+            Process incoming events ready to be processed
+            Subscribe (save to database), generate event "Subscription completed", mark event
+            as done - all in one transaction
+            </summary>
+            <param name="cancellationToken"> Cancellation token </param>
+            <returns> Task </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.IScopedProcessEventsService.ReceiveTaskAsync(System.Threading.CancellationToken)">
+            <summary> Receive data until fail or cancellation </summary>
+            <param name="cancellationToken"> Cancellation token </param>
+            <returns> Task </returns>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Startup">
+            <summary> Startup class </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Startup.Configuration">
+            <summary> Configuration saving variable </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Startup.Configure(Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder)">
+            <summary> Load configuration from files </summary>
+            <param name="hostContext"> host context </param>
+            <param name="config"> Configuration </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"> Services </param>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext">
+            <summary> DBContext for authorization and authentication </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary> Constructor </summary>
+            <param name="options"> Options</param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.EventDataModel">
+            <summary> Table to work with events (client part) </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary> Change default table names so on </summary>
+            <param name="modelBuilder"> Model builder </param>
+        </member>
+    </members>
+</doc>
