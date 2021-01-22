@@ -1,7 +1,8 @@
 ﻿using Communication.EventDataService;
-using TestWunderMobilityCheckout.Actions.ProcessEvents;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using TestWunderMobilityCheckout.Actions.ProcessEvents;
+using TestWunderMobilityCheckout.Aggregates.Products.Services;
 
 namespace TestWunderMobilityCheckout
 {
@@ -24,6 +25,7 @@ namespace TestWunderMobilityCheckout
             services.AddScoped<IEventDataFactory<TestWunderMobilityCheckoutDBContext>, EventDataFactory<TestWunderMobilityCheckoutDBContext>>();
             services.AddScoped<IEventDataAction<TestWunderMobilityCheckoutDBContext>, EventDataAction<TestWunderMobilityCheckoutDBContext>>();
             services.AddScoped<IProcessEventsAct, ProcessEventsAct>();
+            services.AddScoped<IProductsFactory, ProductsFactory>();
 
             services.AddSingleton(Configuration);
         }

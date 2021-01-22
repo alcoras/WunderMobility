@@ -1,5 +1,6 @@
 ﻿using Communication.EventDataService;
 using Microsoft.EntityFrameworkCore;
+using TestWunderMobilityCheckout.Aggregates.Products.Models;
 
 namespace TestWunderMobilityCheckout
 {
@@ -15,6 +16,9 @@ namespace TestWunderMobilityCheckout
 
         /// <summary> Table to work with events (client part) </summary>
         public DbSet<EventDataModel> EventDataModel { get; set; }
+
+        /// <summary> Table to work with products </summary>
+        public DbSet<ProductList> ProductList { get; set; }
 
         /// <summary> Change default table names so on </summary>
         /// <param name="modelBuilder"> Model builder </param>

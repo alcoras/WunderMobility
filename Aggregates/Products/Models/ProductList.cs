@@ -56,7 +56,7 @@ namespace TestWunderMobilityCheckout.Aggregates.Products.Models
             return status;
         }
 
-        /// <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+        /// <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
         public readonly struct ProductParams
         {
             /// <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
