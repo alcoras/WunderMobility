@@ -24,15 +24,14 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
                 CleanSubscriptionList = true,
                 IdsTripleList = new List<long[]>()
                 {
-                    new long[3] { (int)ListOfIds.EventProccessedSuccessfully, 0, 0 },
-                    new long[3] { (int)ListOfIds.EventProccessedWithFailes, 0, 0 },
+                    new long[3] { (int)ListOfIds.TestWunderMobilityCreate, 0, 0 },
+                    new long[3] { (int)ListOfIds.TestWunderMobilityDelete, 0, 0 },
+                    new long[3] { (int)ListOfIds.TestWunderMobilityProductsQuery, 0, 0 },
                 },
             };
 
-            //string stringJson = JsonConverters.SerializeJson(subscribeEvent);
-            //this._eventDataFactory.RegisterEvent(new Communication.EventDataService.EventDataParamsDTO(null, true,  null, null, stringJson));
-
-            //await this._eventDataFactory.DBContext.SaveChangesAsync();
+            string stringJson = JsonConverters.SerializeJson(subscribeEvent);
+            this._eventDataFactory.RegisterEvent(new Communication.EventDataService.EventDataParamsDTO(null, true,  null, null, stringJson));
 
             // Fill test data
             var productTable = await this._productsFactory.ReadFilteredAsync();

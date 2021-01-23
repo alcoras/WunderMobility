@@ -48,7 +48,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
             var foundProducts = new List<ProductParamsDTO>();
 
             // if list is empty but we pass empty list it will filter against empty list
-            if (eventDTO.ProductCodeList.Count > 0)
+            if (eventDTO.ProductCodeList != null && eventDTO.ProductCodeList.Count > 0)
                 foundProducts = await this._productsFactory.ReadFilteredAsync(eventDTO.ProductCodeList);
             else
                 foundProducts = await this._productsFactory.ReadFilteredAsync();
@@ -58,6 +58,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
             {
                 foundDTOs.Add(new WunderMobilityProduct
                 {
+                    Id = item.Id,
                     ProductCode = item.ProductCode,
                     Name = item.Name,
                     Price = item.Price,
@@ -90,6 +91,11 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
         {
             var eventDTO = JsonConvert.DeserializeObject<CommonListOfIds>(eventJson);
 
+            foreach (var item in eventDTO.Ids)
+            {
+                await this._productsFactory.DeleteAsync(item);
+            }
+
             var actionStatus = new ValidationStatusHandler()
             {
                 Message = "Successfully deleted",
@@ -115,7 +121,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
                 eventDTO.Price,
                 eventDTO.PromotionalQuantity,
                 eventDTO.PromotionalPrice,
-                null));
+                false));
 
             var responseEvent = this.generateCommonEvent(eventDTO.AggregateId, actionStatus, eventDTO.UserId);
 
