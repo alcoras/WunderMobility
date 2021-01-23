@@ -21,7 +21,7 @@ namespace TestWunderMobilityCheckout.Aggregates.Customers.Services
         /// </summary>
         /// <param name="Name"> Optional filter on customer's name </param>
         /// <returns> List of customers </returns>
-        Task<List<CustomerParamsDTO>> ReadFilteredAsync(string Name);
+        Task<List<CustomerParamsDTO>> ReadFilteredAsync(string Name = null);
 
         /// <summary>
         /// Delete customer element

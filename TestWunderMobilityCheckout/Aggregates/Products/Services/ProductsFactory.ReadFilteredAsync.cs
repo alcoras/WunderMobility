@@ -9,11 +9,16 @@ namespace TestWunderMobilityCheckout.Aggregates.Products.Services
     public partial class ProductsFactory
     {
         /// <inheritdoc/>
-        public async Task<List<ProductParamsDTO>> ReadFilteredAsync(string productCode = null)
+        public async Task<List<ProductParamsDTO>> ReadFilteredAsync(List<string> productCodeList = null)
         {
-            var queryResult = await (from productElement in this.DBContext.Set<ProductList>()
-                              where productElement.ProductCode == productCode || string.IsNullOrEmpty(productCode)
-                              select productElement).ToListAsync();
+            var query = from productElement in this.DBContext.Set<ProductList>()
+                              select productElement;
+            if (productCodeList != null)
+            {
+                query = query.Where(p => productCodeList.Contains(p.ProductCode));
+            }
+
+            var queryResult = await query.ToListAsync();
 
             var ret = new List<ProductParamsDTO>();
 

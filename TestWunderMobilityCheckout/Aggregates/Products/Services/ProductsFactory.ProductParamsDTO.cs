@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TestWunderMobilityCheckout.Aggregates.Products.Services
+﻿namespace TestWunderMobilityCheckout.Aggregates.Products.Services
 {
     /// <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
     public readonly struct ProductParamsDTO

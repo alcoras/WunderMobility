@@ -21,9 +21,9 @@ namespace TestWunderMobilityCheckout.Aggregates.Products.Services
         /// <summary>
         /// Filtered read
         /// </summary>
-        /// <param name="productCode"> Optional filter </param>
+        /// <param name="productCodeList"> Optional filter </param>
         /// <returns> List of products </returns>
-        Task<List<ProductParamsDTO>> ReadFilteredAsync(string productCode);
+        Task<List<ProductParamsDTO>> ReadFilteredAsync(List<string> productCodeList = null);
 
         /// <summary>
         /// Delete product element

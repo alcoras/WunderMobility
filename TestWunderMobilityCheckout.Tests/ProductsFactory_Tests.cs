@@ -77,7 +77,7 @@ namespace TestWunderMobilityCheckout.Tests
                     Assert.IsTrue(!status.HasErrors);
                     await context.SaveChangesAsync();
 
-                    var received = await service.ReadFilteredAsync("001");
+                    var received = await service.ReadFilteredAsync(new List<string> { "001" });
 
                     Assert.IsTrue(received.Count == 1);
 
