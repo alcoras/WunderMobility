@@ -59,7 +59,7 @@ namespace TestWunderMobilityCheckout.Aggregates.Products.Models
         /// <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
         public readonly struct ProductParams
         {
-            /// <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+            /// <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
             /// <param name="id"> <see cref="Id"/> </param>
             /// <param name="productCode"> <see cref="ProductCode"/> </param>
             /// <param name="name"> <see cref="Name"/> </param>

@@ -66,6 +66,126 @@
         <member name="F:TestWunderMobilityCheckout.Adds.Constants.ConfigFileEncDictionary.DicConfigProvider">
             <summary> The list of sections to decrypt for configuration provider ("." => ":" in dic key)</summary>
         </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList">
+            <summary> List of Clients </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.Name">
+            <summary> Customer name </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.PromotionalSum">
+            <summary> Sum to activate promotion </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.PromotionalDiscount">
+            <summary> The percent of discount when the purchase price is more than PromotialnalSum  </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.#ctor(TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams@)">
+            <summary> Register new client </summary>
+            <param name="clientParams"> Client params </param>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.ValidateProperties(TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams@)">
+            <summary> Validate input properties </summary>
+            <param name="clientParams"> Client params </param>
+            <returns> Validation status </returns>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams">
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.#ctor(System.Nullable{System.Int64},System.String,System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{System.Boolean})">
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
+            <param name="id"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.Id"/> </param>
+            <param name="name"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.Name"/> </param>
+            <param name="promotionalSum"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.PromotionalSum"/> </param>
+            <param name="promotionalDiscount"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.PromotionalDiscount"/> </param>
+            <param name="isDeleted"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.IsDeleted"/> </param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.Id">
+            <summary> Table unique id </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.Name">
+            <summary> Client name </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.PromotionalSum">
+            <summary> Sum to activate promotion </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.PromotionalDiscount">
+            <summary> The percent of discount when the purchase price is more than PromotialnalSum  </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Models.CustomersList.CustomerParams.IsDeleted">
+            <summary> Soft delete mark </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory.Create(TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory.#ctor(TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext)">
+            <summary>
+            Constructor <see cref="T:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory"/>
+            </summary>
+            <param name="currentDBContext"> DBContext from dependency injection </param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory.DBContext">
+            <summary> property to get or set (prefarably none but in rare cases) Dbcontext (transactional purposes) </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory.DeleteAsync(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomersFactory.ReadFilteredAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO">
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.#ctor(System.Nullable{System.Int64},System.String,System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{System.Boolean})">
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
+            <param name="id"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.Id"/> </param>
+            <param name="name"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.Name"/> </param>
+            <param name="promotionalSum"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.PromotionalSum"/> </param>
+            <param name="promotionalDiscount"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.PromotionalDiscount"/> </param>
+            <param name="isDeleted"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.IsDeleted"/> </param>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.Id">
+            <summary> Table unique id </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.Name">
+            <summary> Client name </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.PromotionalSum">
+            <summary> Sum to activate promotion </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.PromotionalDiscount">
+            <summary> The percent of discount when the purchase price is more than PromotialnalSum  </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO.IsDeleted">
+            <summary> Soft delete mark </summary>
+        </member>
+        <member name="T:TestWunderMobilityCheckout.Aggregates.Customers.Services.ICustomersFactory">
+            <summary>
+            Customers service
+            </summary>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.ICustomersFactory.Create(TestWunderMobilityCheckout.Aggregates.Customers.Services.CustomerParamsDTO@)">
+            <summary>
+            Create new customer
+            </summary>
+            <param name="customerParams"> Creation parameters </param>
+            <returns> Parameters validation status </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.ICustomersFactory.ReadFilteredAsync(System.String)">
+            <summary>
+            Filtered read
+            </summary>
+            <param name="Name"> Optional filter on customer's name </param>
+            <returns> List of customers </returns>
+        </member>
+        <member name="M:TestWunderMobilityCheckout.Aggregates.Customers.Services.ICustomersFactory.DeleteAsync(System.Int64)">
+            <summary>
+            Delete customer element
+            </summary>
+            <param name="id"> Customers table id </param>
+            <returns> Task </returns>
+        </member>
         <member name="T:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList">
             <summary> List of products </summary>
         </member>
@@ -97,7 +217,7 @@
             <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
         </member>
         <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.#ctor(System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Single},System.Nullable{System.Int64},System.Nullable{System.Single},System.Nullable{System.Boolean})">
-            <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
             <param name="id"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Id"/> </param>
             <param name="productCode"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.ProductCode"/> </param>
             <param name="name"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Models.ProductList.ProductParams.Name"/> </param>
@@ -178,7 +298,7 @@
             <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
         </member>
         <member name="M:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductParamsDTO.#ctor(System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Single},System.Nullable{System.Int64},System.Nullable{System.Single},System.Nullable{System.Boolean})">
-            <summary> EventRecipientsParams immutable struct (pass it for performance using in, out, ref) </summary>
+            <summary> Immutable struct (pass it for performance using in, out, ref) </summary>
             <param name="id"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductParamsDTO.Id"/> </param>
             <param name="productCode"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductParamsDTO.ProductCode"/> </param>
             <param name="name"> <see cref="P:TestWunderMobilityCheckout.Aggregates.Products.Services.ProductParamsDTO.Name"/> </param>
@@ -359,6 +479,9 @@
         </member>
         <member name="P:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.ProductList">
             <summary> Table to work with products </summary>
+        </member>
+        <member name="P:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.CustomersList">
+            <summary> Table to work with customers </summary>
         </member>
         <member name="M:TestWunderMobilityCheckout.TestWunderMobilityCheckoutDBContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary> Change default table names so on </summary>
