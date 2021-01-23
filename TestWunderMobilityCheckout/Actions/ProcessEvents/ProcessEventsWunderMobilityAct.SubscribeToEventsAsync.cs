@@ -27,6 +27,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
                     new long[3] { (int)ListOfIds.TestWunderMobilityCreate, 0, 0 },
                     new long[3] { (int)ListOfIds.TestWunderMobilityDelete, 0, 0 },
                     new long[3] { (int)ListOfIds.TestWunderMobilityProductsQuery, 0, 0 },
+                    new long[3] { (int)ListOfIds.TestWunderMobilityDoCheckout, 0, 0 },
                 },
             };
 
