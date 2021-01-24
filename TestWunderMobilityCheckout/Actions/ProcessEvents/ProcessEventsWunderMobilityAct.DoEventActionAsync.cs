@@ -68,7 +68,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
             {
                 var responseEvent = this.generateCommonEvent(eventDTO.AggregateId, status, eventDTO.UserId);
 
-                json = JsonConverters.SerializeJson(responseEvent);
+                json = JsonConvert.SerializeObject(responseEvent);
 
                 this._eventDataFactory.RegisterEvent(new EventDataParamsDTO(null, true, null, eventDTO.AggregateId, json));
                 this._eventDataFactory.MarkEventDone(eventKey);
@@ -116,7 +116,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
                 UserId = eventDTO.UserId,
             };
 
-            json = JsonConverters.SerializeJson(resultEvent);
+            json = JsonConvert.SerializeObject(resultEvent);
 
             this._eventDataFactory.RegisterEvent(new EventDataParamsDTO(null, true, null, eventDTO.AggregateId, json));
             this._eventDataFactory.MarkEventDone(eventKey);
@@ -162,7 +162,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
                 UserId = eventDTO.UserId,
             };
 
-            var json = JsonConverters.SerializeJson(responseEvent);
+            var json = JsonConvert.SerializeObject(responseEvent);
 
             this._eventDataFactory.RegisterEvent(new EventDataParamsDTO(null, true, null, eventDTO.AggregateId, json));
             this._eventDataFactory.MarkEventDone(eventKey);
@@ -185,7 +185,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
 
             var responseEvent = this.generateCommonEvent(eventDTO.AggregateId, actionStatus, eventDTO.UserId);
 
-            var json = JsonConverters.SerializeJson(responseEvent);
+            var json = JsonConvert.SerializeObject(responseEvent);
 
             this._eventDataFactory.RegisterEvent(new EventDataParamsDTO(null, true, null, eventDTO.AggregateId, json));
             this._eventDataFactory.MarkEventDone(eventKey);
@@ -207,7 +207,7 @@ namespace TestWunderMobilityCheckout.Actions.ProcessEvents
 
             var responseEvent = this.generateCommonEvent(eventDTO.AggregateId, actionStatus, eventDTO.UserId);
 
-            var json = JsonConverters.SerializeJson(responseEvent);
+            var json = JsonConvert.SerializeObject(responseEvent);
 
             this._eventDataFactory.RegisterEvent(new EventDataParamsDTO(null, true, null, eventDTO.AggregateId, json));
             this._eventDataFactory.MarkEventDone(eventKey);
